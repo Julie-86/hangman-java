@@ -1,0 +1,11 @@
+# Use lightweight Java runtime only (no JDK needed, only JRE)
+FROM eclipse-temurin:17-jre-alpine
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy compiled .class files from local bin folder into container
+COPY bin/ ./bin/
+
+# Command to run the main App class
+CMD ["java", "-cp", "bin", "application.App"]
