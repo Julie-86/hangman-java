@@ -28,6 +28,6 @@ jobs:
       - name: Compile Java project
         run: javac src/application/*.java
 
-      # 5. Build Docker image
+      # 5. Build Docker image (dev)
       - name: Build Docker image
-        run: docker build -t hangman-java .
+        run: docker build -f Dockerfile.dev -t hangman-java:dev .
